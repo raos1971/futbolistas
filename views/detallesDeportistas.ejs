@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>detallesDeportistas</title>
+</head>
+
+   
+  
+
+<body>
+    <!-- --------------------HEADER------------------ -->
+    <header>
+        <%- include("parcial/head.ejs")%>
+        
+    </header>  
+    <main class="container-fluid">
+     
+        <!--Administrador de productos-->
+        <br>
+        <section class="row">
+          <article class="col-12 ">
+            <h2 class="display-4 text-white bg-info text-center pt-2">Detalle Deportista</h2><br>
+            
+           <div> 
+                <td> <a href="<%= description.video_url %>">Ingresar al video del deportista</a></td>
+            </div><br>
+            <div> 
+              <td> <img src="<%= description.avatar %>" width="150"></td>
+          </div><br>
+     <table class="table">
+       
+        <thead>
+          <tr>
+            
+            <th scope="col">Nombre</th>
+            <th scope="col">email</th>
+            <th scope="col">telefono</th>
+            <th scope="col">edad</th>
+            <th scope="col">estaura</th>
+            <th scope="col">posicion</th>
+            <th scope="col">dominante</th>
+            
+          </tr>
+        </thead>
+            
+     <tbody>
+       
+            <tr>
+              <td><%= description.nombre%> </td>
+              <td><%= description.email%> </td>
+              <td><%= description.telefono%> </td>
+              <td><%= description.edad%> </td>
+              <td><%= description.estatura + " metros"%> </td>
+              <td><%= description.posicion.posicion%> </td>
+              <td><%= description.perfil%> </td>
+              
+            </tr>
+            
+          </tbody>
+        </table> 
+    
+    </article>       
+</section>
+
+</main>
+
+        
+    
+    
+          <div>
+           <a href="/verDeportista" class="btn btn-danger">Volver</a>
+          </div> 
+        
+    </div>
+       <footer>
+        <%- include("parcial/footer.ejs")%>
+        </footer>
+    </body>
+</html>
+        

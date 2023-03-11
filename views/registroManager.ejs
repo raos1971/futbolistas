@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>FutManager</title>
+</head>
+<body>
+    <!-- --------------------HEADER------------------ -->
+    <header>
+        <%- include("parcial/head.ejs")%>
+   
+    </header>
+    <!-- -----------------------BODY------------------------- -->
+    
+    <!-- <% if(locals.errors)   { %>
+      <% for(let oneError in errors )  {%> 
+      
+      <p> <%= errors[oneError].msg %>  </p>
+     <% } %>
+
+     <% } %>         -->
+
+        <form action="/registroManager" method="POST" enctype="multipart/form-data"    id="accion"> 
+          <div>
+            <div>
+              <label for="nombre">nombre</label><br>
+            <input type="text" class="" id="" name="nombre" 
+                  placeholder="nombre completo" 
+                  value="<%= locals.old && old.nombre ? old.nombre : "" %>">
+              <% if (locals.errors && errors.nombre) { %>
+                <div class="text-danger">
+                  <%= errors.nombre.msg %>
+                </div>
+              <% } %>
+              </div><br>
+        
+              <div><label for="pais">Pais</label><br>
+                <input type="text" name="pais" placeholder="pais" 
+                value="<%= locals.old && old.pais ? old.pais : "" %>">
+                <% if (locals.errors && errors.pais) { %>
+                  <div class="text-danger">
+                    <%= errors.pais.msg %>
+                  </div>
+                <% } %>
+              </div>
+              
+              <div><label for="ciudad">Ciudad</label><br>
+                <input type="text" name="ciudad" placeholder="ciudad" 
+                value="<%= locals.old && old.ciudad ? old.ciudad : "" %>">
+								<% if (locals.errors && errors.ciudad) { %>
+                  <div class="text-danger">
+                    <%= errors.ciudad.msg %>
+                  </div>
+                <% } %>
+              </div><br>
+               
+              <div >
+                <label for="email">Email address</label><br>
+                <input type="email" class="" id="" name="email" 
+                placeholder="Enter email" 
+                value="<%= locals.old && old.email ? old.email : "" %>">
+                <% if (locals.errors && errors.email) { %>
+									<div class="text-danger">
+										<%= errors.email.msg %>
+									</div>
+								<% } %>
+								
+                </div><br>
+               
+                <div>
+                  <label for="password">password<br>
+                  <input type="password" name="password" value="<%= locals.old && old.password ? old.password : "" %>">
+                  <% if (locals.errors && errors.password) { %>
+                    <div class="text-danger">
+                      <%= errors.password.msg %>
+                    </div>
+                  <% } %>
+               </div><br>
+
+               
+
+               <div>
+                <label for="avatar">Ingresa foto</label><br>
+                 <input type="file" id="" name="avatar"   placeholder="subir foto" ><br> 
+               </div>
+
+              <button type="submit">enviar</button>
+            
+            </div>
+        </form>
+     
+
+    
+             <footer>
+              <%- include("parcial/footer.ejs")%>
+        
+              </footer>
+    </body>
+</html>

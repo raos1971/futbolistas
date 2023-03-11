@@ -1,0 +1,87 @@
+<header class="hero">
+           
+    <nav class="nav container">
+        <a href="/" class="logofut"><img src="/images/futmanager_logo.png" alt="Logo"></a>
+        <!-- <div class="buscador"><input type="text" name="search" placeholder="Buscar" class="src" autocomplete="off"></div> -->
+        <ul class="nav__link nav__link--menu">
+            <li class="nav__items">
+                <a href="/" class="nav__links">Inicio</a>
+            </li>
+            <li class="nav__items">
+                <a href="/producto" class="nav__links">productos</a>
+            </li>
+            <li class="nav__items">
+                <a href="/nosotros" class="nav__links">Sobre Nosotros</a>
+            </li>
+            <!-- <li class="nav__items">
+                <a href="/formularioDeportista" class="nav__links">Registro-Deportista</a>
+            </li> -->
+            
+            <li class="nav__items">
+                <a href="/formularioDeportista" class="nav__links">Registro-Deportista</a>
+            </li>
+            
+            <li class="nav__items">
+                <a href="/registroManager" class="nav__links">Registro-Manager</a>
+            </li>
+
+            <li class="nav__items">
+                <a href="/deportistaCrud" class="nav__links">Deportistas</a>
+            </li>
+            
+            <li class="nav__items">
+                <a href="/loginManager" class="nav__links">login</a>
+            </li>
+            <li class="nav__items">
+                <a href="/usuarioPerfil" class="nav__links">usuarioPerfil</a>
+            </li>
+
+            <img src="" alt="" class="nav__close">
+         </ul>
+
+         <div class="nav__menu">
+            <img src="./images/menu.svg" alt="" class="nav__img">
+         </div>
+    </nav>
+
+    <section class="hero__container container">
+        <h1 class="hero__title">Futbolistas En Futmanager</h1>
+        <p class="hero__paragraph">Encuentra El Talento Que Buscas</p>
+        <div>
+            <div><form action="/buscar" method="get">
+                <!-- <input id="busqueda" type="text" name="busqueda"><br> -->
+
+                <div class="caja">
+                    <label for="busqueda">Elige tu posición:</label><br>
+                    
+                    <select name="busqueda">
+                      
+                          <option value="#" >Seleccione por posición</option>
+                          <option value="1">Portero</option>
+                          <option value="2">Central</option>
+                          <option value="3">Lateral</option>
+                          <option value="4" >Mediocampista</option>
+                          <option value="5">Extremo</option>
+                          <option value="6">Delantero</option>
+        
+                    </select>
+                  </div><br>
+
+        
+            
+             <button type="submit" name="enviar" >
+            </div> 
+
+
+            </form>
+            <a href="/formularioDeportista" class="cta">Deportista</a><br>
+            
+        </div>
+        <div><a href="/registroManager" class="cta">Empresario</a></div>
+    </section>
+    
+
+    <!-- <div class="h4noticia">
+    <h4>Últimas noticias</h4>
+    </div> -->
+</header>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/styles.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<header>
+    <%- include("parcial/head.ejs")%>
+    
+</header>   
+
+<body>
+  
+    
+    <form action="/loginManager" method="POST" id="accion">
+              
+        <div>
+        
+           <div >
+            <label for="email">Email address</label><br>
+            <input type="email" class="" id="" name="email" placeholder="Enter email">
+            <!-- si en locals tengo los errores y el error que viene es el email -->
+            <% if (locals.errors && errors.email) { %>
+                <div class="text-danger">
+                    <%= errors.email.msg %>
+                </div>
+            <% } %>
+            </div><br>
+           
+            <div>
+              <input type="password" class="" name="password" placeholder="Password">
+           </div><br>
+          <button type="submit">enviar</button>
+        </div>
+    </form>
+ 
+    
+
+
+    <footer>
+        <%- include("parcial/footer.ejs")%>
+       
+      </footer>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+#edit{
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding:50px;
+    margin: 20px;
+   justify-content: center; 
+   /* justify-content: space-between; */
+   
+   
+    background-color: blue;
+}

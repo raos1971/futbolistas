@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>FutManager</title>
+</head>
+
+<body>
+  <header>
+    <%- include("parcial/head.ejs")%>
+
+  </header>
+
+  <!-- enctype="multipart/form-data" NO DEJA FUNCIONAR EL REQ BODY EN ACTUALIZAR  -->
+
+
+  <div class="flex-container">
+
+    <form action="/editar/<%= deportistaEdit.id%>?_method=PUT
+         " method="POST" id="accion">
+
+      <div class="row">
+        <div class="column">
+          <div>
+            <label for="nombre">Nombre Completo:</label><br>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required
+              value="<%= deportistaEdit.nombre%> "><br>
+          </div><br>
+
+          <div>
+            <label for="email">E-mail:</label><br>
+            <input type="email" id="email" name="email" value="<%= deportistaEdit.email%>" placeholder="name@domain.com"
+              required><br>
+          </div><br>
+
+          <div>
+            <label for="telefono">Numero de Teléfono:</label><br>
+            <input type="tex" name="telefono" value="<%= deportistaEdit.telefono%>" minlength="6" maxlength="10">
+          </div> <br>
+
+
+          <div>
+            <label for="estatura">Estatura:</label><br>
+            <input type="number" name="estatura" placeholder="Estatura en Métros" required min="0" step="0.01"
+              value="<%= deportistaEdit.estatura%>">
+          </div><br>
+
+          <div> <label for="fecha_nacimiento">Fecha de Nacimiento</label><br>
+            <input type="date" name="fecha_nacimiento" value="<%= deportistaEdit.fecha_nacimiento%>">
+          </div><br>
+
+
+          <div>
+            <label for="edad">Registra tu edad</label><br>
+            <input type="number" name="edad" value="<%= deportistaEdit.edad%>">
+          </div><br>
+        </div>
+
+        <div class="column">
+          <div>
+            <label for="categoria">Elige categoria:</label> <br>
+
+            <select name="categoria">
+              <option value="#">Seleccione categoria</option>
+              <option value="1" <%=deportistaEdit.categoria_id==1 ? "selected" : null %> >sub-14</option>
+              <option value="2" <%=deportistaEdit.categoria_id==2 ? "selected" : null %> >sub-16</option>
+              <option value="3" <%=deportistaEdit.categoria_id==3 ? "selected" : null %> >sub-18</option>
+              <option value="4" <%=deportistaEdit.categoria_id==4 ? "selected" : null %> >sub-20</option>
+              <option value="5" <%=deportistaEdit.categoria_id==5 ? "selected" : null %> >sub-23</option>
+              <option value="6" <%=deportistaEdit.categoria_id==6 ? "selected" : null %> >Mayores</option>
+            </select>
+
+          </div> <br>
+
+
+          <div>
+            <label for="posicion">Elige tu posición:</label><br>
+            <select name="posicion">
+              <option value="#">Seleccione su posicion</option>
+              <option value="1" <%=deportistaEdit.posicion_id==1 ? "selected" : null %> >Portero</option>
+              <option value="2" <%=deportistaEdit.posicion_id==2 ? "selected" : null %> >Central</option>
+              <option value="3" <%=deportistaEdit.posicion_id==3 ? "selected" : null %> >Lateral</option>
+              <option value="4" <%=deportistaEdit.posicion_id==4 ? "selected" : null %> >Centrocampista</option>
+              <option value="5" <%=deportistaEdit.posicion_id==5 ? "selected" : null %> >Extremo</option>
+              <option value="6" <%=deportistaEdit.posicion_id==6 ? "selected" : null %> >Delantero</option>
+
+            </select>
+          </div><br>
+
+
+          <div>
+            <label for="dominante">Perfil Dominante:</label><br>
+            <select name="perfil">
+              <option value="#">Seleccione su perfil</option>
+              <option value="derecho" <%=deportistaEdit.perfil=="derecho" ? "selected" : null %> >Derecho</option>
+              <option value="izquierdo" <%=deportistaEdit.perfil=="izquierdo" ? "selected" : null %> >Izquierdo</option>
+              <option value="ambidiestro" <%=deportistaEdit.perfil=="ambidiestro" ? "selected" : null %> >Ambidiestro
+              </option>
+            </select>
+          </div><br>
+
+          <div>
+            <label for="video">Ingresa un Video</label><br>
+            <input type="text" id="video" name="video" placeholder="http://website.com"
+              value="<%= deportistaEdit.video_url %> ">
+            <div><br>
+
+
+              <div>
+                <label for="imagen">Ingresa foto</label><br>
+                <input type="file" id="foto" name="avatar" value="<%= deportistaEdit.avatar%> "
+                  placeholder="subir foto"><br>
+              </div><br>
+
+              <div id="textarea">
+                <textarea colunm="30" rows="10" placeholder="Describe tus Caracteristicas"></textarea><br>
+
+              </div>
+               </div>
+               </div class="row">
+                <div class="row">
+
+            <a href="/deportistaCrud" class="btn btn-danger">Volver</a>
+          </div>
+
+          <div lass="row">
+            <button type="submit">Actualizar</button>
+          </div>
+
+    </form>
+
+  </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/styles.css" rel="stylesheet">
+  <title>formularioDeportista</title>
+</head>
+<header>
+  <%- include("parcial/head.ejs")%>
+
+</header>
+
+<body>
+  <div class="flex-container">
+
+    <form action="/formularioDeportista" method="POST" enctype="multipart/form-data" >
+
+      <h2>Formulario Deportista</h2>
+      <div class="row">
+
+        <div class="column">
+
+          <div class="caja">
+            <label for="nombre">Nombre Completo:</label><br>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre completo"
+              value="<%= locals.old && old.nombre ? old.nombre : "" %>">
+             <% if (locals.errors && errors.nombre) { %>
+              <div class="text-danger">
+                <%= errors.nombre.msg %>
+              </div>
+              <% } %>
+          </div><br>
+
+          <div class="caja">
+            <label for="email">E-mail:</label><br>
+            <input type="email" id="email" name="email" placeholder="name@domain.com"
+              value="<%= locals.old && old.email ? old.email : "" %>">
+            <% if (locals.errors && errors.email) { %>
+              <div class="text-danger">
+                <%= errors.email.msg %>
+              </div>
+              <% } %>
+
+          </div> <br>
+
+          <div class="caja">
+            <label for="telefono">Numero de Teléfono:</label><br>
+            <input type="number" name="telefono" pattern="[0-9]+" id="numeros" placeholder="Télefono" minlength="6"
+              maxlength="10" value="<%= locals.old && old.telefono ? old.telefono : "" %>">
+            <% if (locals.errors && errors.telefono) { %>
+              <div class="text-danger">
+                <%= errors.telefono.msg %>
+              </div>
+              <% } %>
+          </div> <br>
+
+          <div class="caja">
+            <label for="estatura">Estatura:</label><br>
+            <input type="number" name="estatura" placeholder="Estatura en Métros" min="0" step="0.01"
+              value="<%= locals.old && old.estatura ? old.estatura : "" %>">
+            <% if (locals.errors && errors.estatura) { %>
+              <div class="text-danger">
+                <%= errors.estatura.msg %>
+              </div>
+              <% } %>
+
+          </div> <br>
+
+          <div class="caja">
+            <label for="peso">Peso:</label><br>
+            <input type="number" name="peso" placeholder="Peso en Kilos" min="0" step="0.01"
+              value="<%= locals.old && old.peso ? old.peso : "" %>">
+            <% if (locals.errors && errors.peso) { %>
+              <div class="text-danger">
+                <%= errors.peso.msg %>
+              </div>
+              <% } %>
+
+          </div> <br>
+
+          <div class="caja">
+            <label for="indice_masa_corporal">Masa corporal:</label><br>
+            <input type="number" name="indice_masa_corporal" placeholder="indice_masa_corporal" min="0" step="0.01"
+              value="<%= locals.old && old.indice_masa_corporal ? old.indice_masa_corporal : "" %>">
+            <% if (locals.errors && errors.indice_masa_corporal) { %>
+              <div class="text-danger">
+                <%= errors.indice_masa_corporal.msg %>
+              </div>
+              <% } %>
+          </div> <br>
+
+          <div class="caja">
+            <label for="salto_vertical">Salto Vertical:</label><br>
+            <input type="number" name="salto_vertical" placeholder="salto_vertical" min="0" step="0.01"
+              value="<%= locals.old && old.salto_vertical ? old.salto_vertical : "" %>">
+            <% if (locals.errors && errors.salto_vertical) { %>
+              <div class="text-danger">
+                <%= errors.salto_vertical.msg %>
+              </div>
+              <% } %>
+
+          </div> <br>
+
+
+          <div class="caja">
+            <label for="salto_horizontal">Salto Horizontal:</label><br>
+            <input type="number" name="salto_horizontal" placeholder="salto_horizontal" min="0" step="0.01"
+              value="<%= locals.old && old.salto_horizontal ? old.salto_horizontal : "" %>">
+            <% if (locals.errors && errors.salto_horizontal) { %>
+              <div class="text-danger">
+                <%= errors.salto_horizontal.msg %>
+              </div>
+              <% } %>
+
+          </div> <br>
+
+
+        </div>
+
+        <div class="column">
+
+          <div class="caja">
+            <label for="envergadura">Envergadura:</label><br>
+            <input type="number" id="email" name="envergadura" placeholder="Envergadura"
+              value="<%= locals.old && old.envergadura ? old.envergadura : "" %>">
+            <% if (locals.errors && errors.envergadura) { %>
+              <div class="text-danger">
+                <%= errors.envergadura.msg %>
+              </div>
+              <% } %>
+
+          </div> <br>
+
+          <div class="caja">
+            <label for="velocidad">Velocidad:</label><br>
+            <input type="number" name="velocidad" pattern="[0-9]+" id="numeros" placeholder="velocidad" minlength="6"
+              maxlength="10" value="<%= locals.old && old.velocidad ? old.velocidad : "" %>">
+            <% if (locals.errors && errors.velocidad) { %>
+              <div class="text-danger">
+                <%= errors.velocidad.msg %>
+              </div>
+              <% } %>
+          </div> <br>
+
+          <div class="caja"> <label for="fecha_nacimiento">Fecha de Nacimiento</label><br>
+            <input type="date" name="fecha_nacimiento"
+              value="<%= locals.old && old.fecha_nacimiento? old.fecha_nacimiento : "" %>">
+            <% if (locals.errors && errors.fecha_nacimiento) { %>
+              <div class="text-danger">
+                <%= errors.fecha_nacimiento.msg %>
+              </div>
+              <% } %>
+          </div><br>
+
+          <div class="caja"> <label for="edad">Edad</label><br>
+            <input type="number" name="edad" value="<%= locals.old && old.edad ? old.edad : "" %>">
+            <% if (locals.errors && errors.edad) { %>
+              <div class="text-danger">
+                <%= errors.edad.msg %>
+              </div>
+              <% } %>
+          </div><br>
+
+          <div class="caja">
+
+
+            <label for="categoria_id">Elige categoria:</label> <br>
+            <% if (locals.errors && errors.categoria_id) { %>
+              <div class="text-danger">
+                <%= errors.categoria_id.msg %>
+              </div>
+              <% } %>
+            <select name="categoria">
+              <option value="#" disabled>Seleccione categoria</option>
+              <option value="1">sub-14</option>
+              <option value="2">sub-16</option>
+              <option value="3">sub-18</option>
+              <option value="4">sub-20</option>
+              <option value="5">sub-23</option>
+              <option value="6">mayores</option>
+            </select>
+
+          </div> <br>
+
+          <div class="caja">
+            <label for="posicion">Elige tu posición:</label><br>
+            <% if (locals.errors && errors.posicion_id) { %>
+              <div class="text-danger">
+                <%= errors.posicion_id.msg %>
+              </div>
+              <% } %>
+            <select name="posicion">
+              
+                  <option value="#" >Seleccione su posición</option>
+                  <option value="1"<%=locals.old && locals.portero && locals.portero ==1 ? "selected" : "" %>>Portero
+                  </option>
+                  <option value="2"<%=locals.old && locals.central && locals.central ==2 ? "selected" : "" %>>Central
+                  </option>
+                  <option value="3"<%=locals.old && locals.lateral && locals.lateral ==3 ? "selected" : "" %>>Lateral
+                  </option>
+                  <option value="4" <%=locals.old && locals.centro_campista && locals.centro_campista==4 ? "selected"
+                    : "" %>>Mediocampista</option>
+                  <option value="5" <%=locals.old && locals.exremo && locals.extremo==5 ? "selected" : "" %>>Extremo
+                  </option>
+                  <option value="6" <%=locals.old && locals.delantero && locals.delantero==6 ? "selected" : "" %>
+                    >Delantero</option>
+
+            </select>
+          </div><br>
+
+          <div class="caja">
+            
+            <label for="perfil">Perfil Dominante:</label><br>
+            <% if (locals.errors && errors.perfil) { %>
+              <div class="text-danger">
+                <%= errors.perfil.msg %>
+              </div>
+              <% } %>
+            <select name="perfil">
+              <option value="#" >Seleccione su perfil</option>
+              <option value="Derecho">Derecho</option>
+              <option value="Izquierdo">Izquierdo</option>
+              <option value="Ambidiestro">Ambidiestro</option>
+            </select>
+          </div><br>
+
+          <div class="caja">
+            <label for="video_url">Ingresa un Video</label><br>
+            <% if (locals.errors && errors.video_url) { %>
+              <div class="text-danger">
+                <%= errors.video_url.msg %>
+              </div>
+              <% } %>
+            <input type="text" name="video_url" placeholder="http://website.com"
+              value="<%= locals.old && old.video_url ? old.video_url : "" %>">
+            <div><br>
+              
+              <div class="caja">
+                <label for="avatar">Ingresa foto</label><br>
+                <input type="file" id="" name="avatar" placeholder="subir foto"
+                  value="<%= locals.old && old.avatar ? old.avatar : "" %>">
+              </div><br>
+
+              <div class="caja">
+
+              </div><br>
+            </div>
+
+          </div>
+          <div>
+
+            
+          </div>
+        <div class="row">
+            <button type="submit">Enviar</button>
+          </div>
+
+
+    </form>
+  </div>
+  <!-- ---------------------FOOTER--------------------------- -->
+
+
+</body>
+
+
+</html>

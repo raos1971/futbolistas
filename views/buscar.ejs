@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>busqueda</title>
+</head>
+<!doctype html>
+<html lang="es">
+    <header>
+        <%- include("parcial/head.ejs")%>
+        
+    </header>   
+<body>
+
+ 
+    <main class="container-fluid">
+     
+      <!--Administrador de productos-->
+      <br>
+      <section class="row">
+        <article class="col-12 ">
+          <h2 class="display-4 text-white bg-info text-center pt-2">Futbolistas</h2>
+         
+        <table class="table">
+            <thead>
+              <tr>
+                
+                <th scope="col">Nombre</th>
+                <th scope="col">posicion</th>
+                <th scope="col">categoria</th>
+                <th scope="col">Ver</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <% respuesta.forEach(element=> { %>
+              <tr>
+                
+                <td><%= element.nombre%> </td>
+                <td><%= element.posicion.posicion%> </td>
+                <td><%= element.categoria.categoria%> </td>
+                <td><a href="/deportistadb/<%= element.id%> "> <ion-icon name="eye-outline"></ion-icon></a></td>
+                <!-- <td><a href="/editar/<%= element.id%> "> <ion-icon name="pencil-outline"></ion-icon></a></td>
+                <td><a href="/delete/<%= element.id%>"><ion-icon name="trash-outline"></ion-icon></a></td> -->
+              </tr>
+              <% }); %>
+            </tbody>
+          </table> 
+        </article>       
+      </section>
+      <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    </main>
+  </body>
+</html>
+    <footer>
+        <%- include("parcial/footer.ejs")%>
+    </footer>
+</body>
+</html>
